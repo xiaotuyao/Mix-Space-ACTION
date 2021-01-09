@@ -10,10 +10,6 @@ jobs:
         name: Build Mix-Space(server)
         runs-on: ubuntu-latest
         steps:
-        - uses: actions/checkout@v2
-          with:
-            persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-            fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
         - name: checkout
           uses: actions/checkout@v2
         - name: Setup Node.js environment
@@ -30,16 +26,11 @@ jobs:
             echo "fix user files success"
             sudo yarn build
             cd ..
-        - name: Commit files
-          run: |
-            git config --local user.email "1596355173@qq.com"
-            git config --local user.name "wibus-wee"
-            git add .
-            git commit -m "Add changes" -a
-        - name: Push changes
-          uses: ad-m/github-push-action@master
+        - name: Upload server Build Artifact
+          uses: actions/upload-artifact@v2.2.2
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
+            name: Mix-Space_Server
+            path: ./server
     build-kami:
         name: Build Mix-Space(kami)
         runs-on: ubuntu-latest
@@ -64,16 +55,11 @@ jobs:
             cd ..
             echo "fix user files success"
             sudo yarn build
-        - name: Commit files
-          run: |
-            git config --local user.email "1596355173@qq.com"
-            git config --local user.name "wibus-wee"
-            git add .
-            git commit -m "Add changes" -a
-        - name: Push changes
-          uses: ad-m/github-push-action@master
+        - name: Upload kami Build Artifact
+          uses: actions/upload-artifact@v2.2.2
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
+            name: Mix-Space_Kami
+            path: ./kami
     build-admin:
         name: Build Mix-Space(admin)
         runs-on: ubuntu-latest
