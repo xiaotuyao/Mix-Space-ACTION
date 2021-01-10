@@ -7,7 +7,7 @@ on:
     - cron: '0 6 * * *'
 jobs:
     build-server:
-        name: Build Mix-Space(server)
+        name: Build Mix-Space(all)
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -57,3 +57,20 @@ jobs:
             sudo yarn build
         - name: ls things
           run: ls
+        - name: tar file
+          run: |
+            sudo tar cf kami.tar.gz kami
+            sudo tar cf server.tar.gz server
+            sudo tar cf admin.tar.gz admin
+        - name: Delete
+          run: |
+            sudo rm -rf kami
+            sudo rm -rf server
+            sudo rm -rf admin
+      	- name: Git Commit and Push
+          uses: github-actions-x/commit@v2.6
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            commit-message: Bot Build
+            email:  1596355173@qq.com
+            name: wibus-wee 
