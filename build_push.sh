@@ -2,7 +2,8 @@
 sudo npm install rimraf -g
 
 # Kami clone and fix
-echo "Kami"
+echo "——————————————————————Kami——————————————————————"
+echo "|————————————————————————————————————————————————|"
 git clone https://github.com/mx-space/kami
 cd kami
 # fix user files
@@ -23,7 +24,8 @@ sudo mv kami.tar.gz .. #此时kami已经移动到根文件夹
 cd .. # exit to root dir
 
 # Server clone and fix
-echo "Server"
+echo "——————————————————————Server——————————————————————"
+echo "|————————————————————————————————————————————————|"
 git clone https://github.com/mx-space/server
 cd server
 # fix user files
@@ -39,7 +41,8 @@ sudo mv server.tar.gz .. #移动已编译文件
 cd .. # exit to root dir
 
 # admin clone and fix
-echo "Admin"
+echo "——————————————————————Admin——————————————————————"
+echo "|————————————————————————————————————————————————|"
 git clone https://github.com/mx-space/admin
 cd admin
 # fix user files
@@ -54,6 +57,8 @@ sudo yarn build
 cd dist
 sudo tar cf admin.tar.gz *
 sudo mv admin.tar.gz .. # 移动编译dist
+cd .. # exit to admin dir
+sudo mv admin.tar.gz .. # mv to root dir
 cd .. # exit to root dir
 
 # delete files
