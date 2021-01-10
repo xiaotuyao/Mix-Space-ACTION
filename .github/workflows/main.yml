@@ -26,20 +26,6 @@ jobs:
             echo "fix user files success"
             sudo yarn build
             cd ..
-        - name: Upload server Build Artifact
-          uses: actions/upload-artifact@v2.2.2
-          with:
-            name: Mix-Space_Server
-            path: ./server
-
-    build-kami:
-        name: Build Mix-Space(kami)
-        runs-on: ubuntu-latest
-        steps:
-        - name: checkout
-          uses: actions/checkout@v2
-        - name: Setup Node.js environment
-          uses: actions/setup-node@v2.1.4
         - name: Build kami
           run: |
             git clone https://github.com/mx-space/kami
@@ -56,20 +42,7 @@ jobs:
             cd ..
             echo "fix user files success"
             sudo yarn build
-        - name: Upload kami Build Artifact
-          uses: actions/upload-artifact@v2.2.2
-          with:
-            name: Mix-Space_Kami
-            path: ./kami
-
-    build-admin:
-        name: Build Mix-Space(admin)
-        runs-on: ubuntu-latest
-        steps:
-        - name: checkout
-          uses: actions/checkout@v2
-        - name: Setup Node.js environment
-          uses: actions/setup-node@v2.1.4
+            cd .. 
         - name: Build admin
           run: |
             git clone https://github.com/mx-space/admin
@@ -82,8 +55,5 @@ jobs:
             sudo wget http://api.iucky.cn/themes/admin/vue.config.js
             echo "fix user files success"
             sudo yarn build
-        - name: Upload admin Build Artifact
-          uses: actions/upload-artifact@v2.2.2
-          with:
-            name: Mix-Space_Admin
-            path: ./admin/dist
+        - name: ls things
+          run: ls
