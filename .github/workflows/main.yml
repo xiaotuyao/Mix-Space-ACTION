@@ -7,7 +7,7 @@ on:
     - cron: '0 6 * * *'
 jobs:
     build-server:
-        name: Build Mix-Space(all)
+        name: Build Mix-Space(server)
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -26,6 +26,20 @@ jobs:
             echo "fix user files success"
             sudo yarn build
             cd ..
+        - name: Upload server Build Artifact
+          uses: actions/upload-artifact@v2.2.2
+          with:
+            name: Mix-Space_Server
+            path: ./server
+
+    build-kami:
+        name: Build Mix-Space(kami)
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@v2
+        - name: Setup Node.js environment
+          uses: actions/setup-node@v2.1.4
         - name: Build kami
           run: |
             git clone https://github.com/mx-space/kami
@@ -42,7 +56,20 @@ jobs:
             cd ..
             echo "fix user files success"
             sudo yarn build
-            cd .. 
+        - name: Upload kami Build Artifact
+          uses: actions/upload-artifact@v2.2.2
+          with:
+            name: Mix-Space_Kami
+            path: ./kami
+
+    build-admin:
+        name: Build Mix-Space(admin)
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@v2
+        - name: Setup Node.js environment
+          uses: actions/setup-node@v2.1.4
         - name: Build admin
           run: |
             git clone https://github.com/mx-space/admin
@@ -55,23 +82,8 @@ jobs:
             sudo wget http://api.iucky.cn/themes/admin/vue.config.js
             echo "fix user files success"
             sudo yarn build
-        - name: ls things
-          run: ls
-        - name: tar file
-          run: |
-            sudo tar cf kami.tar.gz kami
-            sudo tar cf server.tar.gz server
-            sudo tar cf admin.tar.gz admin
-        - name: Delete
-          run: |
-            sudo rm -rf kami
-            sudo rm -rf server
-            sudo rm -rf admin
-
-	- name: Git Commit and Push
-          uses: github-actions-x/commit@v2.6
+        - name: Upload admin Build Artifact
+          uses: actions/upload-artifact@v2.2.2
           with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-            commit-message: Bot Build
-            email:  1596355173@qq.com
-            name: wibus-wee
+            name: Mix-Space_Admin
+            path: ./admin/dist
