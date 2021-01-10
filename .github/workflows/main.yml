@@ -31,6 +31,7 @@ jobs:
           with:
             name: Mix-Space_Server
             path: ./server
+
     build-kami:
         name: Build Mix-Space(kami)
         runs-on: ubuntu-latest
@@ -60,6 +61,7 @@ jobs:
           with:
             name: Mix-Space_Kami
             path: ./kami
+
     build-admin:
         name: Build Mix-Space(admin)
         runs-on: ubuntu-latest
