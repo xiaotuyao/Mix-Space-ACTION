@@ -97,10 +97,9 @@ jobs:
           uses: actions/setup-node@v2.1.4
         - name: Build All
           run: sh build_push.sh
-        - name: Git push and commit
-          uses: github-actions-x/commit@v2.6
+        - name: Git Commit/Push Changes
+          # You may pin to the exact commit or the version.
+          # uses: actions-x/commit@84e36ff61a04a105b21819f97ce91aba52bc6aab
+          uses: actions-x/commit@v2
           with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-            commit-message: Bot Build
-            email:  1596355173@qq.com
-            name: wibus-wee 
+            token: ${{ secrets.GITHUB_TOKEN }}
