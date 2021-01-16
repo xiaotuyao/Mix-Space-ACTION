@@ -93,10 +93,13 @@ jobs:
       steps:
         - name: checkout
           uses: actions/checkout@v2
+          
         - name: Setup Node.js environment
           uses: actions/setup-node@v2.1.4
+          
         - name: Build All
           run: sh build_push.sh
+          
         - name: GitHub Push
           uses: ad-m/github-push-action@v0.6.0
           with:
