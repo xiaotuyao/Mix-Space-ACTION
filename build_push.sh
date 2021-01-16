@@ -21,7 +21,13 @@ sudo yarn
 sudo yarn build
 sudo tar cf kami.tar.gz *
 sudo mv kami.tar.gz .. #此时kami已经移动到根文件夹
+echo "|—————————————**** ls ****———————————————————————|"
+echo "|————————————————————————————————————————————————|"
+ls
 cd .. # exit to root dir
+echo "|—————————————**** ls ****———————————————————————|"
+echo "|————————————————————————————————————————————————|"
+ls
 
 # Server clone and fix
 echo "——————————————————————Server——————————————————————"
@@ -38,7 +44,13 @@ sudo yarn
 sudo yarn build
 sudo tar cf server.tar.gz *
 sudo mv server.tar.gz .. #移动已编译文件
+echo "|—————————————**** ls ****———————————————————————|"
+echo "|————————————————————————————————————————————————|"
+ls
 cd .. # exit to root dir
+echo "|—————————————**** ls ****———————————————————————|"
+echo "|————————————————————————————————————————————————|"
+ls
 
 # admin clone and fix
 echo "——————————————————————Admin——————————————————————"
@@ -58,8 +70,14 @@ cd dist
 sudo tar cf admin.tar.gz *
 sudo mv admin.tar.gz .. # 移动编译dist
 cd .. # exit to admin dir
+echo "|—————————————**** ls ****———————————————————————|"
+echo "|————————————————————————————————————————————————|"
+ls
 sudo mv admin.tar.gz .. # mv to root dir
 cd .. # exit to root dir
+echo "|—————————————**** ls ****———————————————————————|"
+echo "|————————————————————————————————————————————————|"
+ls
 
 # delete files
 echo "delete files"
