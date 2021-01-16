@@ -84,3 +84,6 @@ echo "delete files"
 sudo rm -rf server
 sudo rm -rf kami
 sudo rm -rf admin
+echo "|—————————————**** ls ****———————————————————————|"
+echo "|————————————————————————————————————————————————|"
+ls
