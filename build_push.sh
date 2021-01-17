@@ -90,3 +90,5 @@ ls
 
 git add .
 git commit -m "Build Out"
+git config --global user.email "1596355173@qq.com"
+git config --global user.name "wibus-wee"
