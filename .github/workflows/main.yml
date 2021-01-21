@@ -103,5 +103,5 @@ jobs:
         - name: GitHub Push
           uses: github-actions-x/commit@v2.6
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
+            github-token: ${{ secrets.GITHUB_TOKEN }}
             push-branch: main
