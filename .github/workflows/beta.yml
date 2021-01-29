@@ -1,0 +1,28 @@
+name: Builder Beta
+ 
+on:
+  push:
+  schedule:
+  # 定时任务
+    - cron: '0 6 * * *'
+jobs:
+    build-new:
+      name: Build Mix-Space(Pull)
+      runs-on: ubuntu-latest
+      steps:
+        - name: checkout
+          uses: actions/checkout@v2
+          
+        - name: Setup Node.js environment
+          uses: actions/setup-node@v2.1.4
+          
+        - name: Build All
+          run: sh build_push.sh
+          
+        - name: GitHub Push
+          uses: github-actions-x/commit@v2.6
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            commit-message: Bot build
+            email: 1596355173@qq.com
+            name: wibus-wee
