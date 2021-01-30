@@ -21,7 +21,7 @@ jobs:
             cd server
             sudo yarn
             sudo rm -rf .env
-            sudo mv /server_config/.env .env
+            sudo mv ../server_config/.env .env
             echo "成功填入用户文件"
             sudo yarn build
             cd ..
@@ -47,11 +47,11 @@ jobs:
             sudo yarn
             sudo  rm -rf .env
             sudo  rm -rf config.ts
-            sudo mv /kami_config/.env .env
-            sudo mv /kami_config/configs.ts configs.ts
+            sudo mv ../kami_config/.env .env
+            sudo mv ../kami_config/configs.ts configs.ts
             cd public
             sudo rm -rf manifest.json
-            sudo mv /kami_config/manifest.json
+            sudo mv ../kami_config/manifest.json
             cd ..
             echo "成功填入用户文件"
             sudo yarn build
@@ -77,8 +77,8 @@ jobs:
             sudo yarn
             sudo rm -rf .env
             sudo rm -rf vue.config.js
-            sudo mv /admin_config/.env .env
-            sudo mv /admin_config/vue.config.js vue.config.js
+            sudo mv ../admin_config/.env .env
+            sudo mv ../admin_config/vue.config.js vue.config.js
             echo "成功填入用户文件"
             sudo yarn build
         - name: Upload admin Build Artifact
