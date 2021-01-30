@@ -11,11 +11,12 @@ sudo  rm -rf .env
 sudo  rm -rf configs.ts
 # sudo  wget http://api.iucky.cn/themes/kami/.env
 # sudo  wget http://api.iucky.cn/themes/kami/configs.ts
-sudo mv /kami/.env .env
-sudo mv /kami/configs.ts configs.ts
+sudo mv /kami_config/.env .env
+sudo mv /kami_config/configs.ts configs.ts
 cd public
 sudo  rm -rf manifest.json
-sudo  wget http://api.iucky.cn/themes/kami/manifest.json
+# sudo  wget http://api.iucky.cn/themes/kami/manifest.json
+sudo mv /kami_config/manifest.json
 cd ..
 echo "成功充补用户文件"
 # 开始构建
@@ -66,14 +67,14 @@ sudo rm -rf .env
 sudo rm -rf vue.config.js
 # sudo wget http://api.iucky.cn/themes/admin/.env
 # sudo wget http://api.iucky.cn/themes/admin/vue.config.js
-sudo mv /admin/.env .env
-sudo mv /admin/vue.config.js vue.config.js
+sudo mv /admin_config/.env .env
+sudo mv /admin_config/vue.config.js vue.config.js
 echo "成功填入用户文件"
 # build
 sudo yarn
 sudo yarn build
 cd dist
-sudo tar cf admin1.tar.gz *
+sudo tar cf admin.tar.gz *
 sudo mv admin.tar.gz .. # 移动编译dist
 cd .. # exit to admin dir
 # echo "|—————————————**** ls ****———————————————————————|"
