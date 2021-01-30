@@ -52,7 +52,6 @@ jobs:
             sudo mv ../kami_config/manifest.json manifest.json
             cd public
             sudo rm -rf manifest.json
-            sudo mv ../kami_config/manifest.json manifest.json
             sudo mv ../manifest.json manifest.json
             cd ..
             echo "成功填入用户文件"
