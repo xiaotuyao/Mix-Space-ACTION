@@ -19,8 +19,8 @@ echo "fix user files success"
 # build
 sudo yarn
 sudo yarn build
-sudo tar cf kami.tar.gz *
-sudo mv kami.tar.gz .. #此时kami已经移动到根文件夹
+sudo tar cf kami1.tar.gz *
+sudo mv kami1.tar.gz .. #此时kami已经移动到根文件夹
 echo "|—————————————**** ls ****———————————————————————|"
 echo "|————————————————————————————————————————————————|"
 ls
@@ -42,8 +42,8 @@ echo "fix user files success"
 # build
 sudo yarn
 sudo yarn build
-sudo tar cf server.tar.gz *
-sudo mv server.tar.gz .. #移动已编译文件
+sudo tar cf server1.tar.gz *
+sudo mv server1.tar.gz .. #移动已编译文件
 echo "|—————————————**** ls ****———————————————————————|"
 echo "|————————————————————————————————————————————————|"
 ls
@@ -67,13 +67,13 @@ echo "fix user files success"
 sudo yarn
 sudo yarn build
 cd dist
-sudo tar cf admin.tar.gz *
-sudo mv admin.tar.gz .. # 移动编译dist
+sudo tar cf admin1.tar.gz *
+sudo mv admin1.tar.gz .. # 移动编译dist
 cd .. # exit to admin dir
 echo "|—————————————**** ls ****———————————————————————|"
 echo "|————————————————————————————————————————————————|"
 ls
-sudo mv admin.tar.gz .. # mv to root dir
+sudo mv admin1.tar.gz .. # mv to root dir
 cd .. # exit to root dir
 echo "|—————————————**** ls ****———————————————————————|"
 echo "|————————————————————————————————————————————————|"
@@ -87,8 +87,3 @@ sudo rm -rf admin
 echo "|—————————————**** ls ****———————————————————————|"
 echo "|————————————————————————————————————————————————|"
 ls
-
-git add .
-git commit -m "Build Out"
-git config --global user.email "1596355173@qq.com"
-git config --global user.name "wibus-wee"
