@@ -1,0 +1,13 @@
+{
+  "name": "秉性之松",
+  "short_name": "秉性之松",
+  "theme_color": "#fff",
+  "description": "有秉性且正直的松",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "lang": "zh-cmn-Hans",
+  "prefer_related_applications": true,
+  "icons": []
+}
