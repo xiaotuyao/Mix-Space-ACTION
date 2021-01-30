@@ -1,10 +1,10 @@
-name: Beta V2.0
+name: Beta V2.0（无需理会此版本的报错）
  
 on:
   push:
   schedule:
-  # 定时任务
-    - cron: '0 6 * * *'
+  # # 定时任务
+  #   - cron: '0 6 * * *'
 jobs:
     build-new:
       name: Build Mix-Space(Pull)
