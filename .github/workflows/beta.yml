@@ -29,3 +29,5 @@ jobs:
           with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
             commit-message: Bot build
+            force-add: ture
+            rebase: ture
