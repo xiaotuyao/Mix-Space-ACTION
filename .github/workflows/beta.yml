@@ -18,7 +18,12 @@ jobs:
           
         - name: Build All
           run: sh build_push.sh
-          
+
+        - name: GitHub Push1
+          uses: ad-m/github-push-action@v0.6.0
+          with: 
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+           branch: main
         - name: GitHub Push
           uses: github-actions-x/commit@v2.6
           with:
