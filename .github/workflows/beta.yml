@@ -29,5 +29,3 @@ jobs:
           with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
             commit-message: Bot build
-            email: 1596355173@qq.com
-            name: wibus-wee
