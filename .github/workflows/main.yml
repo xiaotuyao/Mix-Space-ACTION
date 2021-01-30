@@ -1,4 +1,4 @@
-name: Builder_Old
+name: Builder V1.0
 
 on:
   push:
@@ -51,7 +51,7 @@ jobs:
             sudo mv ../kami_config/configs.ts configs.ts
             cd public
             sudo rm -rf manifest.json
-            sudo mv ../kami_config/manifest.json
+            sudo mv ../kami_config/manifest.json manifest.json
             cd ..
             echo "成功填入用户文件"
             sudo yarn build
